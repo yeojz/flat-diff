@@ -1,20 +1,6 @@
-# diff-keypath
+import diff from './index';
 
-> A diff algorithm based on the unique key path of each value in an Object / JSON
-
-## Installation
-
-```
-$ npm install diff-keypath --save
-```
-
-## Example
-
-Given:
-
-```js
-  import diff from 'diff-keypath';
-
+test('example in readme should generate expected result', () => {
   const base = {
     a: [1, 2, { b: 1 }, 4, 5, 6],
     b: 'test',
@@ -27,13 +13,9 @@ Given:
     d: 'new'
   };
 
-  const metadata = diff(base, target);
-```
+  const delta = diff(base, target);
 
-will give a result of:
-
-```js
-  const metadata = [
+  expect(delta).toMatchObject([
     { path: 'a.0', type: 'same', prev: 1, value: 1 },
     { path: 'a.1', type: 'same', prev: 2, value: 2 },
     { path: 'a.2.b', type: 'put', prev: 1, value: 2 },
@@ -43,9 +25,5 @@ will give a result of:
     { path: 'b', type: 'put', prev: 'test', value: 'test 2' },
     { path: 'c', type: 'del', prev: 'prev', value: void 0 },
     { path: 'd', type: 'post', prev: void 0, value: 'new' }
-  ];
-```
-
-## License
-
-`diff-keypath` is [MIT licensed](./LICENSE)
+  ]);
+});
