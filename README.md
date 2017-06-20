@@ -1,11 +1,11 @@
-# diff-keypath
+# flat-diff
 
 > A diff algorithm based on the unique key path of each value in an Object / JSON
 
 ## Installation
 
 ```
-$ npm install diff-keypath --save
+$ npm install flat-diff --save
 ```
 
 ## Example
@@ -13,7 +13,7 @@ $ npm install diff-keypath --save
 Given:
 
 ```js
-  import diff from 'diff-keypath';
+  import diff from 'flat-diff';
 
   const base = {
     a: [1, 2, { b: 1 }, 4, 5, 6],
@@ -48,4 +48,4 @@ will give a result of:
 
 ## License
 
-`diff-keypath` is [MIT licensed](./LICENSE)
+`flat-diff` is [MIT licensed](./LICENSE)
