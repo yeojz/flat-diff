@@ -16,14 +16,14 @@ test('example in readme should generate expected result', () => {
   const delta = diff(base, target);
 
   expect(delta).toMatchObject([
-    { path: 'a.0', type: 'same', prev: 1, value: 1 },
-    { path: 'a.1', type: 'same', prev: 2, value: 2 },
+    { path: 'a.0', type: 'same', value: 1 },
+    { path: 'a.1', type: 'same', value: 2 },
     { path: 'a.2.b', type: 'put', prev: 1, value: 2 },
-    { path: 'a.3', type: 'same', prev: 4, value: 4 },
+    { path: 'a.3', type: 'same', value: 4 },
     { path: 'a.4', type: 'put', prev: 5, value: 6 },
-    { path: 'a.5', type: 'del', prev: 6, value: void 0 },
+    { path: 'a.5', type: 'del', value: 6 },
     { path: 'b', type: 'put', prev: 'test', value: 'test 2' },
-    { path: 'c', type: 'del', prev: 'prev', value: void 0 },
-    { path: 'd', type: 'post', prev: void 0, value: 'new' }
+    { path: 'c', type: 'del', value: 'prev' },
+    { path: 'd', type: 'post', value: 'new' }
   ]);
 });

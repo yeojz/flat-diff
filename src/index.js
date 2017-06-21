@@ -1,9 +1,10 @@
-import flatten from 'flat';
+import {flatten} from 'flat';
 import reconcile from './reconcile';
 
-function diff(base, target) {
-  const flatBase = flatten(base);
-  const flatTarget = flatten(target);
+function diff(base, target, opts = {}) {
+  const flatBase = flatten(base, opts.flatten || {});
+  const flatTarget = flatten(target, opts.flatten || {});
+
   const mergeKeys = Object.keys(Object.assign({}, flatBase, flatTarget)).sort();
 
   return reconcile(mergeKeys, flatBase, flatTarget);
