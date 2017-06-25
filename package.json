@@ -1,6 +1,6 @@
 {
   "name": "flat-diff",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "A naive diff algorithm based on the unique key path of each value in an Object / JSON",
   "main": "lib/index.js",
   "repository": "git@github.com:yeojz/flat-diff.git",
