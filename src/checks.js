@@ -61,9 +61,9 @@ function post(collect, path, args) {
   return false;
 }
 
-export default [
+export default {
   same,
   put,
   del,
   post
-];
+};

@@ -1,6 +1,10 @@
 # flat-diff
 
-> A diff algorithm based on the unique key path of each value in an Object / JSON
+> A naive diff algorithm based on the unique key path of each value in an Object / JSON
+
+[![npm package][npm-badge]][npm-link]
+[![Build Status][build-badge]][build-link]
+[![Coverage Status][codecov-badge]][codecov-link]
 
 ## Installation
 
@@ -80,3 +84,13 @@ i.e.
 ## License
 
 `flat-diff` is [MIT licensed](./LICENSE)
+
+
+[npm-badge]: https://img.shields.io/npm/v/flat-diff.svg?style=flat-square
+[npm-link]: https://www.npmjs.com/package/flat-diff
+
+[build-badge]: https://img.shields.io/circleci/project/github/yeojz/flat-diff/master.svg?style=flat-square
+[build-link]: https://circleci.com/gh/yeojz/flat-diff.svg
+
+[codecov-badge]: https://img.shields.io/codecov/c/github/yeojz/flat-diff/master.svg?style=flat-square
+[codecov-link]: https://codecov.io/gh/yeojz/flat-diff

@@ -10,7 +10,12 @@ function reconcile(mergeKeys, flatBase, flatTarget) {
       targetHasProperty: flatTarget.hasOwnProperty(path)
     };
 
-    checks.some((fn) => fn(collect, path, args));
+    [
+      checks.same,
+      checks.put,
+      checks.del,
+      checks.post
+    ].some((fn) => fn(collect, path, args));
 
     return collect;
   }, []);

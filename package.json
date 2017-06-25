@@ -1,7 +1,7 @@
 {
   "name": "flat-diff",
   "version": "0.0.0",
-  "description": "A diff algorithm based on the unique key path of each value in an Object / JSON",
+  "description": "A naive diff algorithm based on the unique key path of each value in an Object / JSON",
   "main": "lib/index.js",
   "repository": "git@github.com:yeojz/flat-diff.git",
   "author": "Gerald Yeo <contact@fusedthought.com>",
@@ -10,8 +10,8 @@
     "build": "rollup -c",
     "clean": "rimraf lib coverage",
     "coverage": "jest --coverage",
-    "coveralls": "cat ./coverage/lcov.info | coveralls",
-    "lint": "eslint --ext js src tests",
+    "coverage:upload": "codecov",
+    "lint": "eslint --ext js src",
     "test": "jest"
   },
   "keywords": [
@@ -20,10 +20,15 @@
     "key",
     "path",
     "changeset",
-    "object"
+    "object",
+    "keypath"
   ],
+  "jest": {
+    "coverageDirectory": "./coverage/"
+  },
   "devDependencies": {
     "babel-preset-es2015": "^6.24.1",
+    "codecov": "^2.2.0",
     "coveralls": "^2.13.1",
     "eslint": "^4.0.0",
     "jest": "^20.0.4",
